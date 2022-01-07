@@ -19,8 +19,10 @@ import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import Inicio from "../screens/Inicio";
-import TabTwoScreen from "../screens/MenuEspanol";
+import MenuEspanol from "../screens/MenuEspanol";
 import {
+  HomeParamList,
+  MenuInglesStackParamList,
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
@@ -36,7 +38,6 @@ import {
 } from "@expo/vector-icons";
 import ProductDetailsScreen from "../screens/ProductDetailsScreen";
 import MenuIngles from "../screens/MenuIngles";
-import MenuEspanol from "../screens/MenuEspanol";
 
 export default function Navigation({
   colorScheme,
@@ -122,17 +123,17 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="MenuIngles"
-        component={MenuIngles}
+        component={TabOneIngles}
         options={{
-          title: "Menú Inglés",
+          title: "English Menu",
           tabBarIcon: ({ color }) => (
             <Entypo name="menu" size={24} color={color} />
           ),
         }}
       />
       <BottomTab.Screen
-        name="MenuEspañol"
-        component={MenuEspanol}
+        name="MenuEspanol"
+        component={TabOneEspanol}
         options={{
           title: "Menú Español",
           tabBarIcon: ({ color }) => (
@@ -140,8 +141,8 @@ function BottomTabNavigator() {
           ),
         }}
       />
-      <BottomTab.Screen
-        name="CervezasArtesanales"
+      {/* <BottomTab.Screen
+        name="ProductDetailsScreen"
         component={ProductDetailsScreen}
         options={{
           title: "Cervezas Artesanales",
@@ -149,21 +150,43 @@ function BottomTabNavigator() {
             <Ionicons name="beer" size={24} color={color} />
           ),
         }}
-      />
-      <BottomTab.Screen
-        name="Mezcales"
-        component={TabTwoScreen}
-        options={{
-          title: "Mezcales",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons
-              name="bottle-tonic-outline"
-              size={24}
-              color={color}
-            />
-          ),
-        }}
-      />
+      /> */}
     </BottomTab.Navigator>
+  );
+}
+
+const HomeStack = createNativeStackNavigator<HomeParamList>();
+
+function TabOneEspanol() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="MenuEspanol"
+        component={MenuEspanol}
+        options={{ headerShown: false }}
+      />
+      <HomeStack.Screen
+        name="ProductDetailsScreen"
+        component={ProductDetailsScreen}
+      />
+    </HomeStack.Navigator>
+  );
+}
+
+const MenuInglesStack = createNativeStackNavigator<MenuInglesStackParamList>();
+
+function TabOneIngles() {
+  return (
+    <MenuInglesStack.Navigator>
+      <MenuInglesStack.Screen
+        name="MenuInglesNuevo"
+        component={MenuIngles}
+        options={{ headerShown: false }}
+      />
+      <MenuInglesStack.Screen
+        name="ProductDetailsScreen"
+        component={ProductDetailsScreen}
+      />
+    </MenuInglesStack.Navigator>
   );
 }

@@ -3,37 +3,42 @@ import styles from "./styles";
 
 import { Text, View } from "../../components/Themed";
 import { Image } from "react-native";
-import descripcionProducto from "../../assets/data/descripcionProducto";
 
-export default function ProductDetailsScreen() {
+export default function ProductDetailsScreen(props: any) {
+  console.log();
+
   return (
     <View style={styles.container}>
       <View style={styles.subcontainer1}>
         <Image
           style={styles.image}
           source={{
-            uri: descripcionProducto.poster,
+            uri: props.route.params.producto.poster,
           }}
         />
       </View>
       <View style={styles.subcontainer2}>
-        <Text style={styles.nombre}>Nombre: {descripcionProducto.nombre}</Text>
-        <Text style={styles.descripcion}>
-          Origen: {descripcionProducto.origen}
+        <Text style={styles.nombre}>
+          Nombre: {props.route.params.producto.nombre}
         </Text>
         <Text style={styles.descripcion}>
-          Estilo: {descripcionProducto.estilo}
+          Origen: {props.route.params.producto.origen}
         </Text>
         <Text style={styles.descripcion}>
-          Sabores: {descripcionProducto.sabores}
+          Estilo: {props.route.params.producto.estilo}
         </Text>
         <Text style={styles.descripcion}>
-          Porcentaje: {descripcionProducto.porcentaje}%
+          Sabores: {props.route.params.producto.sabores}
         </Text>
         <Text style={styles.descripcion}>
-          Reconocimiento: {descripcionProducto.reconocimiento}
+          Porcentaje: {props.route.params.producto.porcentaje}%
         </Text>
-        <Text style={styles.precio}>Precio: {descripcionProducto.precio}</Text>
+        <Text style={styles.descripcion}>
+          Reconocimiento: {props.route.params.producto.reconocimiento}
+        </Text>
+        <Text style={styles.precio}>
+          Precio: {props.route.params.producto.precio}
+        </Text>
       </View>
     </View>
   );

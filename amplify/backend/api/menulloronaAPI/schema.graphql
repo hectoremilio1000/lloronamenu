@@ -1,0 +1,20 @@
+type Category @model {
+  id: ID!
+  titleMenu: String!
+  titleCategorias: String
+  productos: [Productos] @connection(keyName: "byCategory", fields: ["id"])
+}
+
+type Productos @model @key(name: "byCategory", fields: ["categoryID"]) {
+  id: ID!
+  nombre: String
+  poster: String
+  origen: String
+  estilo: String
+  sabores: String
+  precio: String
+  reconocimiento: String
+  porcentaje: Int
+  categoryID: ID
+  category: Category @connection(fields: ["categoryID"])
+}

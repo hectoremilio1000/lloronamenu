@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-menulloronaf-dev-32527-authRole",
+      "UnauthRoleArn": "arn:aws:iam::900765165512:role/amplify-menulloronaf-dev-32527-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::900765165512:role/amplify-menulloronaf-dev-32527-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-menulloronaf-dev-32527-deployment",
+      "UnauthRoleName": "amplify-menulloronaf-dev-32527-unauthRole",
+      "StackName": "amplify-menulloronaf-dev-32527",
+      "StackId": "arn:aws:cloudformation:us-east-1:900765165512:stack/amplify-menulloronaf-dev-32527/c1f3b0f0-6f9b-11ec-b116-12572f5cd093",
+      "AmplifyAppId": "d3936yo0tonb6u"
+    }
+  }
+}

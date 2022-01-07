@@ -1,0 +1,13 @@
+projects:
+  menulloronaAPI:
+    schemaPath: >-
+      Users/hectoremiliovelasquez/proyectos/React_native/menuLlorona/Netflix/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql

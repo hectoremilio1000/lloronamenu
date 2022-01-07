@@ -30,7 +30,7 @@ export type RootTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
   Inicio: undefined;
-  MenuEspañol: undefined;
+  MenuEspanol: undefined;
   CervezasArtesanales: undefined;
   Mezcales: undefined;
   ProductDetailsScreen: undefined;
@@ -42,3 +42,13 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
   >;
+
+export type HomeParamList = {
+  MenuEspanol: undefined;
+  ProductDetailsScreen: undefined;
+};
+
+export type MenuInglesStackParamList = {
+  MenuInglesNuevo: undefined;
+  ProductDetailsScreen: undefined;
+};

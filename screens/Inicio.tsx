@@ -1,13 +1,10 @@
-import { StyleSheet, Image, Button } from "react-native";
+import { StyleSheet, Image, Button, Pressable } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
-import Colors from "../constants/Colors";
 
-export default function TabOneScreen({
-  navigation,
-}: RootTabScreenProps<"TabOne">) {
+export default function Inicio({ navigation }: RootTabScreenProps<"TabOne">) {
+  console.log(navigation.navigate);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Cantina La Llorona</Text>
@@ -31,10 +28,19 @@ export default function TabOneScreen({
       />
       <View style={styles.subcontainer}>
         <View style={styles.containerButton}>
-          <Button title="Menú Ingles" onPress={() => navigation.navigate} />
+          <Button
+            title="English Menu"
+            onPress={() => navigation.navigate("MenuIngles")}
+            color={"#000"}
+          />
         </View>
+
         <View style={styles.containerButton}>
-          <Button title="Menú Español" onPress={() => navigation.navigate} />
+          <Button
+            title="Menú Español"
+            onPress={() => navigation.navigate("MenuEspanol")}
+            color={"#000"}
+          />
         </View>
       </View>
     </View>
