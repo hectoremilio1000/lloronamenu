@@ -9,6 +9,7 @@ import {
   NavigatorScreenParams,
 } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import ProductDetailsScreen from "./screens/ProductDetailsScreen/index";
 
 declare global {
   namespace ReactNavigation {
@@ -32,6 +33,8 @@ export type RootTabParamList = {
   MenuEspañol: undefined;
   CervezasArtesanales: undefined;
   Mezcales: undefined;
+  ProductDetailsScreen: undefined;
+  MenuIngles: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =

@@ -34,6 +34,9 @@ import {
   Entypo,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import ProductDetailsScreen from "../screens/ProductDetailsScreen";
+import MenuIngles from "../screens/MenuIngles";
+import MenuEspanol from "../screens/MenuEspanol";
 
 export default function Navigation({
   colorScheme,
@@ -118,8 +121,8 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="MenuIngles"
+        component={MenuIngles}
         options={{
           title: "Menú Inglés",
           tabBarIcon: ({ color }) => (
@@ -129,7 +132,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="MenuEspañol"
-        component={TabTwoScreen}
+        component={MenuEspanol}
         options={{
           title: "Menú Español",
           tabBarIcon: ({ color }) => (
@@ -139,7 +142,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="CervezasArtesanales"
-        component={TabTwoScreen}
+        component={ProductDetailsScreen}
         options={{
           title: "Cervezas Artesanales",
           tabBarIcon: ({ color }) => (
