@@ -6,7 +6,7 @@ import { RootTabScreenProps } from "../../types";
 
 import styles from "./styles";
 
-interface HomeCategoryProps {
+interface MasCategoryProps {
   category: {
     id: string;
     title: string;
@@ -14,19 +14,18 @@ interface HomeCategoryProps {
   };
 }
 
-export default function HomeCategory(props: HomeCategoryProps) {
+export default function MasEspanolCategory(props: MasCategoryProps) {
   const { category } = props;
   const navigation = useNavigation();
 
   const onProductPress = (producto: any) => {
-    navigation.navigate("DetalleProducto", {
+    navigation.navigate("DetalleMenu", {
       producto,
     });
   };
 
   return (
     <>
-      <Text style={styles.title}>{category.title}</Text>
       <FlatList
         data={category.productos}
         horizontal
@@ -38,6 +37,7 @@ export default function HomeCategory(props: HomeCategoryProps) {
                 uri: item.poster,
               }}
             />
+            <Text style={styles.title}>{item.nombre}</Text>
           </Pressable>
         )}
       />

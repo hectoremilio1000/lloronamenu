@@ -19,7 +19,7 @@ export default function HomeCategory(props: HomeCategoryProps) {
   const navigation = useNavigation();
 
   const onProductPress = (producto: any) => {
-    navigation.navigate("DetalleProducto", {
+    navigation.navigate("ProductDetailsScreen", {
       producto,
     });
   };

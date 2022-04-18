@@ -38,7 +38,7 @@ export default function Inicio({ navigation }: RootTabScreenProps<"TabOne">) {
         <View style={styles.containerButton}>
           <Button
             title="Menú Español"
-            onPress={() => navigation.navigate("MenuEspanol")}
+            onPress={() => navigation.navigate("menuEspanol")}
             color={"#000"}
           />
         </View>
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingTop: 10,
+    backgroundColor: "#ffff",
   },
   containerButton: {
     width: 200,

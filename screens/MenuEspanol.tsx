@@ -3,8 +3,10 @@ import { StyleSheet } from "react-native";
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import { Image, FlatList } from "react-native";
-import categoriasEspanol from "../assets/data/categoriasEspanol";
 import HomeCategory from "../components/HomeCategory";
+import masEspanol from "../assets/data/masEspanol";
+import MasEspanolCategory from "../components/masEspanolCategory";
+import categoriasEspanol from "../assets/data/categoriasEspanol";
 
 export default function MenuEspanol() {
   return (
@@ -14,6 +16,11 @@ export default function MenuEspanol() {
         data={categoriasEspanol.items}
         renderItem={({ item }) => <HomeCategory category={item} />}
       />
+      <Text style={styles.title}>{masEspanol.titleCategorias}</Text>
+      <FlatList
+        data={masEspanol.items}
+        renderItem={({ item }) => <MasEspanolCategory category={item} />}
+      />
     </View>
   );
 }
@@ -21,15 +28,14 @@ export default function MenuEspanol() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "black",
-    flex: 1,
-    padding: 20,
+
+    padding: 10,
   },
   title: {
     color: "#fff",
     fontSize: 30,
     textAlign: "center",
-    marginVertical: 10,
-    marginBottom: 20,
+
     fontWeight: "600",
   },
 });

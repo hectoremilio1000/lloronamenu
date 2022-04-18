@@ -37,7 +37,9 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import ProductDetailsScreen from "../screens/ProductDetailsScreen";
+import ProductDetailsScreen2 from "../screens/ProductDetailsScreen2";
 import MenuIngles from "../screens/MenuIngles";
+import ProductMenuScreen from "../screens/ProductMenuScreen";
 
 export default function Navigation({
   colorScheme,
@@ -132,7 +134,7 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="MenuEspanol"
+        name="menuEspanol"
         component={TabOneEspanol}
         options={{
           title: "Menú Español",
@@ -166,9 +168,10 @@ function TabOneEspanol() {
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
-        name="ProductDetailsScreen"
+        name="DetalleProducto"
         component={ProductDetailsScreen}
       />
+      <HomeStack.Screen name="DetalleMenu" component={ProductMenuScreen} />
     </HomeStack.Navigator>
   );
 }
@@ -185,8 +188,9 @@ function TabOneIngles() {
       />
       <MenuInglesStack.Screen
         name="ProductDetailsScreen"
-        component={ProductDetailsScreen}
+        component={ProductDetailsScreen2}
       />
+      <MenuInglesStack.Screen name="DetailMenu" component={ProductMenuScreen} />
     </MenuInglesStack.Navigator>
   );
 }

@@ -30,7 +30,7 @@ export type RootTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
   Inicio: undefined;
-  MenuEspanol: undefined;
+  menuEspanol: undefined;
   CervezasArtesanales: undefined;
   Mezcales: undefined;
   ProductDetailsScreen: undefined;
@@ -45,10 +45,12 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
 
 export type HomeParamList = {
   MenuEspanol: undefined;
-  ProductDetailsScreen: undefined;
+  DetalleProducto: undefined;
+  DetalleMenu: undefined;
 };
 
 export type MenuInglesStackParamList = {
   MenuInglesNuevo: undefined;
   ProductDetailsScreen: undefined;
+  DetailMenu: undefined;
 };
